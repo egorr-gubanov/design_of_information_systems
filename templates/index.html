@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>CityPulse — Модуль транспортных потоков</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="/static/css/styles.css" />
+  </head>
+  <body class="bg-gray-100 text-gray-900">
+    <div class="min-h-screen flex flex-col">
+      <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+          <h1 class="text-xl font-semibold text-gray-900">
+            CityPulse — Анализ транспортных потоков
+          </h1>
+          <span class="text-sm text-gray-500">Прототип модуля (FastAPI + Leaflet)</span>
+        </div>
+      </header>
+
+      <main class="flex-1 max-w-7xl mx-auto w-full py-4 px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          <section class="lg:col-span-2">
+            <div class="bg-white shadow rounded-lg overflow-hidden">
+              <div class="px-4 py-2 border-b border-gray-200 flex justify-between items-center">
+                <h2 class="text-lg font-medium">Карта дорожной сети</h2>
+                <button
+                  id="refresh-btn"
+                  class="inline-flex items-center px-3 py-1 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none"
+                >
+                  Обновить
+                </button>
+              </div>
+              <div id="map" class="h-96 w-full"></div>
+            </div>
+          </section>
+
+          <section class="space-y-4">
+            <div class="bg-white shadow rounded-lg p-4">
+              <h3 class="text-md font-semibold mb-2">Активные алерты</h3>
+              <ul id="alerts-list" class="space-y-1 text-sm"></ul>
+            </div>
+            <div class="bg-white shadow rounded-lg p-4">
+              <h3 class="text-md font-semibold mb-2">Последние метрики</h3>
+              <ul id="metrics-list" class="space-y-1 text-sm"></ul>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer class="bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 py-3 text-xs text-gray-500">
+          Прототип модуля CityPulse. Данные и визуализация предназначены для демонстрации
+          архитектурных решений.
+        </div>
+      </footer>
+    </div>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="/static/js/app.js"></script>
+  </body>
+  </html>
+

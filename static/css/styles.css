@@ -1,0 +1,8 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+#map {
+  min-height: 22rem;
+}
+
